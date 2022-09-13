@@ -2,7 +2,7 @@ import React from 'react'
 import defaultVinyl from '../assets/vinyl_PNG111.png'
 
 function Track({track}) {
-  console.log(track)
+
 
   const {image, BPM, title, artist} = track
 

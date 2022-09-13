@@ -14,11 +14,33 @@ function TracksPage() {
     .then(tracks => setTracks(tracks))
   }, [])
   
-    
+  function handleAddTrack(newTrack) {
+    const {image, title, artist, bpm} = newTrack
+
+    const newTrackBody = {
+      image: image,
+      title: title,
+      artist: artist,
+      BPM: parseInt(bpm)
+    }
+
+    fetch(baseUrl, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newTrackBody)
+    })
+    .then(res => res.json())
+    .then(addedTrack => {
+      setTracks([...tracks, addedTrack])
+    })
+  }
+
   return (
     <div>
       <Search />
-      <AddTrackForm />
+      <AddTrackForm onAddTrack={handleAddTrack}/>
       <TracksList tracks={tracks}/>
     </div>
   )
