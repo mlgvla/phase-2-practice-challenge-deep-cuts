@@ -48,6 +48,13 @@
       "artist": "Jake",
       "BPM": 50,
       "id": 7
+    },
+    {
+      "image": "",
+      "title": "Lulululu",
+      "artist": "Zebo",
+      "BPM": 82,
+      "id": 8
     }
   ]
 }

@@ -11,16 +11,16 @@ function TracksPage() {
   useEffect(() => {
     fetch(baseUrl)
     .then(res => res.json())
-    .then(tracks => setTracks(tracks))
+    .then(setTracks)
   }, [])
   
   function handleAddTrack(newTrack) {
     const {image, title, artist, bpm} = newTrack
 
     const newTrackBody = {
-      image: image,
-      title: title,
-      artist: artist,
+      image,
+      title,
+      artist,
       BPM: parseInt(bpm)
     }
 
